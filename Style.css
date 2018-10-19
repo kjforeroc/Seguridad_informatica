@@ -35,8 +35,9 @@ nav ul{
 nav > ul{
 	display: table;
 	width: 100%;
-	background: #1C3647;
+	background:  #808080;
 	position: auto;
+	
 }
 
 nav > ul li{
@@ -121,24 +122,24 @@ nav > ul > li > a:hover > span {
 }
 /*color*/
 nav ul li a .primero{
-	background:#f75b12;
+	background:#F47920;
 }
 
-nav ul li ul li span .primeros{
+/*nav ul li ul li span .primeros{
 	background:#f75b12;
-}
+}*/
 
 nav ul li a .segundo{
-	background:#009530;
+	background:#50B748;
 }
 nav ul li a .tercero{
-	background:#C52032;
+	background:#F0B429;
 }
 nav ul li a .cuarto{
-	background:#950F98;
+	background:#A54686;
 }
 nav ul li a .quinto{
-	background:#FCEB00;
+	background:#43C7F4;
 }
 
 
