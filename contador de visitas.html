@@ -1,0 +1,69 @@
+<! DOCTYPE html>
+<html>
+<head>
+	<title>contador_pagina_web</title>
+	<meta charset = "UTF-8" />
+</head>
+<body>
+
+</body>
+</html>
+
+<? php
+	función  get_num_visitas () {
+		// conectar
+		$ link  =  mysql_connect ( ' localhost ' , ' root ' , ' ' );
+		if ( ! $ link ) {
+			die ( ' Não foi possível conectar: '  .  mysql_error ());
+		}
+		
+		mysql_select_db ( " contador " );
+		$ consulta  =  " SELECCIONAR total "  .
+				 " DE` visitas` "  .
+				 " ORDEN POR EL LÍMITE DE ASC total 1 " ;
+		$ resultado  =  mysql_query ( $ consulta );
+		si ( ! $ resultado ) {
+			$ message   =  ' Consulta inválida: '  .  mysql_error () .  " \ n " ;
+			$ mensaje  . =  ' Toda la consulta: '  .  $ consulta ;
+			die ( $ mensaje );
+		}
+		if ( mysql_num_rows ( $ resultado ) ==  0 ) {
+			echo  " No se encontraron filas, no hay nada que imprimir, así que estoy saliendo " ;
+			la salida ;
+		}
+		$ row  =  mysql_fetch_array ( $ resultado );
+		mysql_close ( $ link );
+		devuelve  $ fila [ " total " ];
+		// consulta fazer
+		// total retornar
+	}
+	función  imprime_visitas ( $ contador ) {
+		devuelve  " <h1> "  .  $ contador  .  " </h1> " ;
+	}
+	
+	función  contar_visita () {
+		// conectar
+		$ link  =  mysql_connect ( ' localhost ' , ' root ' , ' ' );
+		if ( ! $ link ) {
+			die ( ' Não foi possível conectar: '  .  mysql_error ());
+		}
+		
+		mysql_select_db ( " contador " );
+		$ consulta  =  " ACTUALIZAR`  visitas`  "  .
+				 " SET total = total + 1 " ;
+		$ resultado  =  mysql_query ( $ consulta );
+		si ( ! $ resultado ) {
+			$ message   =  ' Consulta inválida: '  .  mysql_error () .  " \ n " ;
+			$ mensaje  . =  ' Toda la consulta: '  .  $ consulta ;
+			die ( $ mensaje );
+		}
+		mysql_close ( $ link );
+	}
+	contar_visita ();
+	$ contador  = get_num_visitas ();
+	echo imprime_visitas ( $ contador );
+? >
+
+ 
+</ cuerpo >
+</ html >
